@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members - Nepali Community</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff5733;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        header .announcement {
+            background: #ffcc00;
+            color: black;
+            padding: 5px 0;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .members {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .member {
+            flex: 1 1 calc(33.333% - 20px);
+            margin: 10px;
+            background: #fff;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nepali Samaj - Fort Wayne, IN</h1>
+        <div class="announcement">फोर्ट वेन, इन्डियामा नेपाली समुदायमा स्वागत छ। हामी नेपाली संस्कृति र परम्पराको संरक्षण र प्रवर्द्धनमा समर्पित एक जीवन्त समुदाय हौं।</div>
+    </header>
+    <nav>
+        <a href="Nep_Com.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="#members">Members</a>
+    </nav>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for names..">
+        </div>
+        <div class="members" id="membersList">
+            <div class="member">
+                <h3>Name: Naresh Singh Khadka</h3>
+                <p>Address: Fort Wayne, IN 46845</p>
+                <p>Mobile: </p>
+            </div>
+            <div class="member">
+                <h3>Name: Anil Karki (Admin)</h3>
+                <p>Address: Fort Wayne, IN 46845</p>
+                <p>Mobile: </p>
+            </div>
+            <div class="member">
+                <h3>Name: </h3>
+                <p>Address: Fort Wayne, IN 46845</p>
+                <p>Mobile: </p>
+            </div>
+			<div class="member">
+                <h3>Name: </h3>
+                <p>Address: Fort Wayne, IN 46845</p>
+                <p>Mobile: </p>
+            </div>
+			<div class="member">
+                <h3>Name: </h3>
+                <p>Address: Fort Wayne, IN 46845</p>
+                <p>Mobile: </p>
+            </div>
+			<div class="member">
+                <h3>Name: </h3>
+                <p>Address: Fort Wayne, IN 46845</p>
+                <p>Mobile: </p>
+            </div>
+            <!-- Add more members as needed -->
+        </div>
+    </div>
+    <script>
+        function searchMembers() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toUpperCase();
+            const membersList = document.getElementById('membersList');
+            const members = membersList.getElementsByClassName('member');
+            for (let i = 0; i < members.length; i++) {
+                const name = members[i].getElementsByTagName('h3')[0];
+                if (name.innerText.toUpperCase().indexOf(filter) > -1) {
+                    members[i].style.display = "";
+                } else {
+                    members[i].style.display = "none";
+                }
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('input', searchMembers);
+    </script>
+</body>
+</html>
